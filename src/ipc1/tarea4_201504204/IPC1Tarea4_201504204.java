@@ -76,4 +76,44 @@ public class IPC1Tarea4_201504204 implements ActionListener {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent clic) {
+        
+        numero1 = texto1.getText();
+        numero2 = texto2.getText();
+        int num1, num2, resultado;
+        num1 = Integer.parseInt(numero1);
+        num2 = Integer.parseInt(numero2);
+
+        if (clic.getSource() == botonmas) {
+            resultado = num1 + num2;
+            texto3.setText(String.valueOf(resultado));
+        }
+        if (clic.getSource() == botonmenos) {
+            resultado = num1 - num2;
+            texto3.setText(String.valueOf(resultado));
+        }
+        if (clic.getSource() == botonpor) {
+            resultado = num1 * num2;
+            texto3.setText(String.valueOf(resultado));
+        }
+        if (clic.getSource() == botondiv) {
+            if (num2 == 0) {
+                JOptionPane.showMessageDialog(null, "Ingrese nuevamente numero 2");
+            } else {
+                resultado = num1 / num2;
+                texto3.setText(String.valueOf(resultado));
+            }
+
+        }
+        if (clic.getSource() == botonigual) {
+            if (num1 == num2) {
+                texto3.setText("Son iguales");
+            } else {
+                texto3.setText("No son iguales");
+            }
+
+        }
+    }
+
 }
